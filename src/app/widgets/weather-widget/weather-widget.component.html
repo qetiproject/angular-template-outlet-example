@@ -1,6 +1,10 @@
 <div class="widget-header">
-  <div class="widget-title">Weather Forecast</div>
+  <div #container></div>
+  <ng-template #defaultWidgetHeader>
+    <div class="widget-title">Weather Forecast</div>
   <div class="widget-sub-title">Current weather in your location</div>
+  </ng-template>
+  
 </div>
 <div class="widget-content">
   <div class="sky-condition">{{ state.data.skyCondition === 'sunny' ? '☀️' : '☁️' }}</div>
