@@ -1,4 +1,14 @@
-<weather-widget [headerTemplate]="altWidgetHeader"></weather-widget>
+<weather-widget 
+    [headerTemplate]="altWidgetHeader" 
+    [contentTemplate]="altWidgetContainer"
+></weather-widget>
 <ng-template #altWidgetHeader>
     <div class="alt-header"> Today's weather</div>
+</ng-template>
+<ng-template #altWidgetContainer let-state>
+    <div>
+        <span>{{state.data.temperature}}°C</span>
+        <span>{{ state.data.skyCondition === 'sunny' ? '☀️' : '☁️' }}</span>
+        <span>{{ state.data.windspeed}}m/s</span>
+    </div>
 </ng-template>
