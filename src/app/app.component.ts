@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { WeatherCustomActionComponent } from './widgets/weather-custom-action/weather-custom-action.component';
 import { WeatherWidgetComponent } from './widgets/weather-widget/weather-widget.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [WeatherWidgetComponent, WeatherCustomActionComponent],
+  imports: [WeatherWidgetComponent],
   templateUrl: './app.component.html',
   styles: [`
     :host {
