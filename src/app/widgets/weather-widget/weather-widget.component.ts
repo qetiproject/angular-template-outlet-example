@@ -6,7 +6,7 @@ import { WidgetState } from '../widget-state.service';
 @Component({
   selector: 'weather-widget',
   standalone: true,
-  imports: [],
+  imports: [NgTemplateOutlet],
   templateUrl: './weather-widget.component.html',
   styleUrls: ['./weather-widget.component.css'],
   providers: [WidgetActions, WidgetState]
@@ -14,4 +14,11 @@ import { WidgetState } from '../widget-state.service';
 export class WeatherWidgetComponent {
   state = inject(WidgetState);
   actions = inject(WidgetActions);
+  injector = inject(Injector)
+
+  @Input() headerTemplate!: TemplateRef<any>;
+
+  @Input() contentTemplate!: TemplateRef<WidgetState>;
+
+  @Input() actionTemplate!: TemplateRef<any>;
 }
